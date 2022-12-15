@@ -16,7 +16,7 @@ for /D %%D in (workflows) do (
 		cmd /C build.bat & if errorlevel 1 echo Error building "%%D" & exit /B 1
 		popd
 		mkdir "deploy\%%D"
-		robocopy /C "%%D/deploy" "deploy\%%D" *
+		robocopy /E "%%D/deploy" "deploy\%%D" *
 	)
 )
 
