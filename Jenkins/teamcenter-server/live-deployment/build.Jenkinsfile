@@ -10,14 +10,14 @@ pipeline {
 				script{
 						zip archive: true, dir: 'teamcenter-server/live-deployment/', glob: 'deploy/**', zipFile: 'deploy.zip'
 					}                    
-                    cleanWs()
+                  
                 }
             }
         }
     }
     post {        
         success {
-            cleanWs()
+           
         }
     }
 }
