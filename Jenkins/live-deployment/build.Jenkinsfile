@@ -1,21 +1,21 @@
 pipeline {
-    agent any
-
+    agent { label 'master' }
     stages {
         stage('Build') {
             steps {
-                echo 'Building  Jenkins TC_DEV3' 
+                bat label: '', script: 'live-deployment\\build.bat'
+            }
+            post {
+                success {
+                    zip archive: true, dir: 'live-deployment/', glob: 'deploy/**', zipFile: 'deploy.zip'                  
+                    cleanWs()
+                }
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing  Jenkins TC_DEV3 '
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying  Jenkins TC_DEV3 '
-            }
+    }
+    post {        
+        success {
+            cleanWs()
         }
     }
 }
