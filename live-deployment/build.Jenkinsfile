@@ -4,17 +4,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building Test TC_DEV 
+                echo 'Building  TC_DEV Sub'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing Test TC_DEV '
+                echo 'Testing  TC_DEV Sub'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying Test TC_DEV '
+                echo 'Deploying TC_DEV Sub'
             }
         }
     }
