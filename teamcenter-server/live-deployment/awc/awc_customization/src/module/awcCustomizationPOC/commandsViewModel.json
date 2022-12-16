@@ -1,0 +1,49 @@
+{
+    "commands": {
+        "Trn9CreateDesign": {
+            "iconId": "cmdSubstitute",
+            "title": "{{i18n.Trn9CreateDesignTitle}}",
+            "description": "{{i18n.Trn9CreateDesignDescription}}"
+        }
+    },
+    "commandHandlers": {
+        "Trn9CreateDesignHandler": {
+            "id": "Trn9CreateDesign",
+            "action": "activateTrn9CreateDesign",
+            "activeWhen": true,
+            "visibleWhen": {
+                "condition": "conditions.true"
+            }
+        }
+    },
+    "commandPlacements": {
+        "Trn9CreateDesignaw_rightWall": {
+            "id": "Trn9CreateDesign",
+            "uiAnchor": "aw_rightWall",
+            "priority": 100
+        }
+    },
+    "actions": {
+        "activateTrn9CreateDesign": {
+            "actionType": "JSFunction",
+            "method": "alert",
+            "deps": "js/Trn9CreateDesignService",
+            "inputData": {
+                "text": "Hello Trn9CreateDesign!"
+            }
+        }
+    },
+    "conditions": {
+        "objectIsSelected": {
+            "expression": "ctx.selected"
+        }
+    },
+    "i18n": {
+        "Trn9CreateDesignTitle": [
+            "awcCustomizationPOCMessages"
+        ],
+        "Trn9CreateDesignDescription": [
+            "awcCustomizationPOCMessages"
+        ]
+    }
+}
